@@ -1,0 +1,106 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    background-color: rgb(210, 220, 228);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.heading {
+    margin: 1rem;
+    font-size: 4rem;
+    color: rgb(30, 99, 151);
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+    text-shadow: 1px 1px 2px black;
+    flex: 1
+}
+
+.footer {
+    background-color: rgb(30, 99, 151);
+    color: rgb(210, 220, 228);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainBody {
+    padding: 0 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    gap: 0
+}
+
+.gridContainer {
+    flex: 1;
+    width: 60%;
+    display: flex;
+    border: 8px solid rgba(11, 11, 127, 0.5);
+    border-radius: 2%;
+    margin-bottom: 2rem;
+}
+
+.grid {
+    width: 90%;
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+}
+
+.sidePanel {
+    width: 10%;
+    border-left: 2px solid rgb(11, 11, 127);
+}
+
+.pixelDiv {
+    border: 0.1px solid rgba(0, 0, 0, 0.5);
+    flex: 1
+}
+
+.gridRow {
+    flex: 1;
+    display: flex
+}
+
+.black {
+    background-color: black;
+}
+
+.sidePanel {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.panelBtn {
+    border-radius: 50%;
+    background-color: brown;
+    color: white;
+    font-size: 1rem;
+    border: 2px solid black;
+    width: 80%;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem
+}
+
+.panelBtn:hover {
+    transform: scale(1.05)
+}
+
+.erase {
+    background-color: rgb(210, 220, 228);
+}
