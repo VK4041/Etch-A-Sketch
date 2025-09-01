@@ -1,9 +1,9 @@
 const body = document.querySelector('body')
 const grid = document.querySelector('.grid')
 const sidePanel = document.querySelector('.sidePanel')
-let gridSize = 16
 
 function createGrid(gridSize = 16) {
+    refreshGridnPanel()
     const gridText = document.querySelector('.mainBody .text')
     gridText.textContent = `Grid size ${gridSize} x ${gridSize}`
     for (let i = 0; i < gridSize; i++) {
@@ -19,8 +19,9 @@ function createGrid(gridSize = 16) {
         }
         grid.appendChild(gridRow)
     }
+    addSidePanel(gridSize)
 }
-function addSidePanel() {
+function addSidePanel(gridSize = 16) {
     const sizeBtn = document.createElement('div')
     const eraseBtn = document.createElement('div')
     const pixels = [...document.querySelectorAll('.pixelDiv')]
@@ -34,9 +35,16 @@ function addSidePanel() {
     sidePanel.appendChild(eraseBtn)
 
     sizeBtn.addEventListener('click', () => {
-        gridSize = parseInt(prompt('Enter grid size', 16))
-        refreshGridnPanel()
-        main()
+        do {
+            gridSize = parseInt(prompt('Enter grid size', 16))
+            if (!Number.isInteger(gridSize)) {
+                alert('Invalid grid size! Numbers only please')
+            }
+            else if (gridSize > 100 || gridSize < 1) {
+                alert('Grid size out of bounds! Try again.')
+            }
+        } while (!Number.isInteger(gridSize) || gridSize > 100 || gridSize < 1)
+        createGrid(gridSize)
     })
     eraseBtn.addEventListener('click', () => {
         pixels.map(each => each.classList.remove('black'))
@@ -50,8 +58,4 @@ function refreshGridnPanel() {
         sidePanel.removeChild(button)
     })
 }
-function main() {
-    createGrid(gridSize)
-    addSidePanel()
-}
-main()
+createGrid()
